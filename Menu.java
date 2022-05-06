@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
-import com.company.Bestelling;
+
 public class Menu {
         public void selecteerOchtendMaaltijd() {
             System.out.println("Bij de ochtendmaaltijd horen de volgende keuzes: ");

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Bestelling {
 
-    public int bestellingsnummer;
+    public int bestellingsNummer;
     private ArrayList<MaaltijdInhoud> alleMaaltijden = initialiseerMaaltijden();
 
     private ArrayList<MaaltijdInhoud> initialiseerMaaltijden() {

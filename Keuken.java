@@ -7,4 +7,8 @@ public class Keuken extends Bestelling {
     public void totaalOverzichtMaaltijden() {
 
     }
+
+    public void beschrijvingmaaltijden() {
+
+    }
 }
