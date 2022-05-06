@@ -5,30 +5,30 @@ import java.util.ArrayList;
 public class Bestelling {
 
     public int bestellingsnummer;
-    private ArrayList<Maaltijd> alleMaaltijden = initialiseerMaaltijden();
+    private ArrayList<MaaltijdInhoud> alleMaaltijden = initialiseerMaaltijden();
 
-    private ArrayList<Maaltijd> initialiseerMaaltijden() {
-        ArrayList<Maaltijd> lijstMetMaaltijden = new ArrayList<>();
-        Maaltijd ochtendMaaltijd = new OchtendMaaltijd();
-        Maaltijd middagMaaltijd = new MiddagMaaltijd();
-        Maaltijd avondMaaltijd = new AvondMaaltijd();
+    private ArrayList<MaaltijdInhoud> initialiseerMaaltijden() {
+        ArrayList<MaaltijdInhoud> lijstMetMaaltijden = new ArrayList<>();
+        MaaltijdInhoud ochtendMaaltijd = new OchtendMaaltijd();
+        MaaltijdInhoud middagMaaltijd = new MiddagMaaltijd();
+        MaaltijdInhoud avondMaaltijd = new AvondMaaltijd();
         lijstMetMaaltijden.add(ochtendMaaltijd);
         lijstMetMaaltijden.add(middagMaaltijd);
         lijstMetMaaltijden.add(avondMaaltijd);
         return lijstMetMaaltijden;
     }
     public void verstuurBestellingen() {
-        for(Maaltijd maaltijd : alleMaaltijden) {
+        for(MaaltijdInhoud maaltijd : alleMaaltijden) {
             maaltijd.verstuurMaaltijd();
         }
     }
 }
 
-interface Maaltijd {
+interface MaaltijdInhoud {
     public void verstuurMaaltijd();
 }
 
-class OchtendMaaltijd implements Maaltijd {
+class OchtendMaaltijd extends Maaltijd implements MaaltijdInhoud {
     public String eten;
     public String drinken;
     public String extra;
@@ -39,7 +39,7 @@ class OchtendMaaltijd implements Maaltijd {
     }
 }
 
-class MiddagMaaltijd implements Maaltijd {
+class MiddagMaaltijd extends Maaltijd implements MaaltijdInhoud{
     public String eten;
     public String drinken;
     public String extra;
@@ -50,7 +50,7 @@ class MiddagMaaltijd implements Maaltijd {
     }
 }
 
-class AvondMaaltijd implements Maaltijd {
+class AvondMaaltijd extends Maaltijd implements MaaltijdInhoud{
     public String eten;
     public String drinken;
     public String extra;
